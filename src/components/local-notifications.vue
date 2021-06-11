@@ -2,11 +2,11 @@
     <section>
         <h1>Notificações Locais</h1>
 
-        <p>Permissão: {{ permission }} <a href="" @click.prevent="request()" v-if="permission !== 'granted'">Solicitar</a></p>
+        <p>Permissão (build): {{ permission }} <a href="" @click.prevent="request()" v-if="permission !== 'granted'">Solicitar</a></p>
 
-        <a href="" @click.prevent="firePersistent('Click para notificar', 'Notificando após um click!')">notificação</a>
-
-        <img src="http://localhost/vue_pwa_webrtc/src/assets/logo.png">
+        <a href="" @click.prevent="fire('Click para notificar', 'Notificando após um click!')">notificação (Sem Build)</a> <br>
+        <img src="../assets/logo.png"> <br>
+        <a href="" @click.prevent="firePersistent('Click para notificar', 'Notificando após um click!')">notificação (Build)</a>
     </section>
 </template>
 

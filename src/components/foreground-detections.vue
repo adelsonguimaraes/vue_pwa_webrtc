@@ -3,6 +3,7 @@
         <h1>Verificação em primeiro plano</h1>
 
         <p>Contagem regressiva: {{ counter }}</p>
+        <small>Saber quando a aba do sistema está ativa</small>
 
         <p v-for="(log, index) in logs" :key="index">
             A Janela estava
@@ -41,3 +42,12 @@
         }
     }
 </script>
+
+<style scope>
+    small {
+        padding: 5px;
+        background-color: rgb(190, 235, 101);
+        border-radius: 2px;
+        font-weight: 600;
+    }
+</style>

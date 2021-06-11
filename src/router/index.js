@@ -5,6 +5,8 @@ import LocalNotifications from '@/components/local-notifications'
 import ForegroundDetection from '@/components/foreground-detections'
 import CameraMicrofone from '@/components/camera-microfone'
 import Foto from '@/components/foto'
+import Gravador from '@/components/gravador'
+import RealTime from '@/components/real-time'
 
 Vue.use(VueRouter)
 
@@ -41,6 +43,16 @@ const routes = [
     path: '/foto',
     name: 'Foto',
     component: Foto
+  },
+  {
+    path: '/gravador',
+    name: 'Gravador',
+    component: Gravador
+  },
+  {
+    path: '/real-time',
+    name: 'RealTime',
+    component: RealTime
   }
 ]
 
