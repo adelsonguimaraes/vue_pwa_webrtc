@@ -53,12 +53,14 @@
                 this.local = new RTCPeerConnection(null);
                 this.remote = new RTCPeerConnection(null);
 
+                // local
                 this.local.addStream(this.stream);
                 this.local.onicecandidate = (event) => {
                     if (event.candidate === null) return false;
                     this.remote.addIceCandidate(new RTCIceCandidate(event.candidate));
                 }
 
+                // remoto
                 this.remote.onaddstream = (event) => {
                     if (!event.stream) return;
                     let element = document.querySelector('video.remoto');
@@ -66,10 +68,13 @@
                 }
                 this.remote.onicecandidate = (event) => {
                     if (event.candidate === null) return false;
-                    this.remote.addIceCandidate(new RTCIceCandidate(event.candidate));
+                    this.local.addIceCandidate(new RTCIceCandidate(event.candidate));
                 }
+
+                // oferta
                 this.local.createOffer({offerToReceiveVideo: 1})
                 .then(desc => {
+                    console.log(desc);
                     this.local.setLocalDescription(desc);
                     this.remote.setRemoteDescription(desc);
                     return this.remote.createAnswer({offerToReceiveVideo: 1});
