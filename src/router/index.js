@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import LocalNotifications from '@/components/local-notifications'
 import ForegroundDetection from '@/components/foreground-detections'
 import CameraMicrofone from '@/components/camera-microfone'
+import Foto from '@/components/foto'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/camera-microfone',
     name: 'CameraMicrofone',
     component: CameraMicrofone
+  },
+  {
+    path: '/foto',
+    name: 'Foto',
+    component: Foto
   }
 ]
 
